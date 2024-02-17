@@ -9,50 +9,55 @@ function getUserChoice() {
     return userChoice;
 }
 
-function gameLogic() {
+function Logic() {
+    // co dát místo result ten counter na score a v každý možnosti dát prostě console.log s výsledkem
+    let result = "";
+
     if (computerChoice == "rock" && userChoice == "rock") {
-        return "draw";
+        result = "draw";
     }
     else if (computerChoice == "paper" && userChoice == "paper") {
-        return "draw";
+        result = "draw";
     }
     else if (computerChoice == "scissors" && userChoice == "scissors") {
-        return "draw";
+        result = "draw";
     }
 
     else if (computerChoice == "rock" && userChoice == "paper") {
-        return "You win !"
+        result = "You win !"
     }
     else if (computerChoice == "rock" && userChoice == "scissors") {
-        return "You loose..."
+        result = "You loose..."
     }
     else if (computerChoice == "paper" && userChoice == "rock") {
-        return "You loose..."
+        result = "You loose..."
     }
     else if (computerChoice == "paper" && userChoice == "scissors") {
-        return "You win !"
+        result = "You win !"
     }
     else if (computerChoice == "scissors" && userChoice == "rock") {
-        return "You win !"
+        result = "You win !"
     }
     else if (computerChoice == "scissors" && userChoice == "paper") {
-        return "You loose..."
+        result = "You loose..."
     }
 
+    return result;
 }
 
 function playGame() {
     console.log("the game starts...");
-    console.log(`computer draws  ${computerChoice}`);
-    console.log(`user draws ${userChoice}`);
+    console.log(`computer draws ${computerChoice}`);
+    console.log(`you draw ${userChoice}`);
 
-    console.log(gameLogic);
+    console.log(Logic());
 
 }
 
 const computerChoice = (getComputerChoice());
 const userChoice = getUserChoice();
-const gameLogic = (gameLogic());
+
+playGame();
 
 
 
